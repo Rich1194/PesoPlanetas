@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu peso en otros planetas</title>
+    <link rel="shortcut icon" href="planet.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tu peso en otros planetas</h1>
+    </header>
+    <section id="introduction">
+        <h3>La gravedad es un fenómeno gravitatorio el cual produce que los cuerpos en la Tierra 
+            posean cierto peso.</h3>
+        <h3>¡Ingresa el peso que tienes aquí en la Tierra y observa cuanto sería en otros planetas!</h3>
+        <h3>Mi peso en la Tierra es de: <input style= width:5% type="number" id="numero"
+             name="numero"/> kg <button type="button" onclick="recibir()">calcular</button> </h3>
+    </section>
+    <section id="content">
+        <div class="container">
+            <h2>Mercurio</h2>
+            <span class="gravedad">G: 3.7 m/s</span>
+            <img src="mercurio.png" alt="">
+            <span>Tu peso es:</span>
+            <input style= width:35% id="1" type="text">
+        </div>
+        <div class="container">
+            <h2>Venus</h2>
+            <span class="gravedad">G: 8.87 m/s</span>
+            <img src="mercurio.png" alt="">
+            <span>Tu peso es:</span>
+            <input style= width:35% id="2" type="text">
+        </div>
+        <div class="container">
+            <h2>Marte</h2>
+            <span class="gravedad">G: 3.71 m/s</span>
+            <img src="mercurio.png" alt="">
+            <span>Tu peso es:</span>
+            <input style= width:35% id="3" type="text">
+        </div>
+        <div class="container">
+            <h2>Jupiter</h2>
+            <span class="gravedad">G: 24.7 m/s</span>
+            <img src="mercurio.png" alt="">
+            <span>Tu peso es:</span>
+            <input style= width:35% id="4" type="text">
+        </div>
+        <div class="container">
+            <h2>Saturno</h2>
+            <span class="gravedad">G: 10.44 m/s</span>
+            <img src="mercurio.png" alt="">
+            <span>Tu peso es:</span>
+            <input style= width:35% id="5" type="text">
+        </div>
+        <div class="container">
+            <h2>Urano</h2>
+            <span class="gravedad">G: 8.87 m/s</span>
+            <img src="mercurio.png" alt="">
+            <span>Tu peso es:</span>
+            <input style= width:35% id="6" type="text">
+        </div>
+        <div class="container">
+            <h2>Neptuno</h2>
+            <span class="gravedad">G: 11.15 m/s</span>
+            <img src="mercurio.png" alt="">
+            <span>Tu peso es:</span>
+            <input style= width:35% id="7" type="text">
+        </div>
+        <div class="container">
+            <h2>Plutón</h2>
+            <span class="gravedad">G: 0.62 m/s</span>
+            <img src="mercurio.png" alt="">
+            <span>Tu peso es:</span>
+            <input style= width:35% id="8" type="text">
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <script>
+        function recibir() {
+        var pesoTierra = document.getElementById("numero").value;
+        if (pesoTierra==""){
+
+                swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Recuerda ingresar tu Peso!',
+                footer: '<a href>Why do I have this issue?</a>'
+                })
+            }else {
+            const gTierra=9.8
+            for (var i=1; i<=8;i++){
+            let PESO_FINAL;
+            let PLANETA=document.getElementById(i);
+           
+            switch(i){
+            case 1:
+            PESO_FINAL= pesoTierra*3.7/gTierra
+            PLANETA.value=`${parseInt(PESO_FINAL)} Kg`
+            break;
+            case 2:
+            PESO_FINAL= pesoTierra*8.87/gTierra
+            PLANETA.value=`${parseInt(PESO_FINAL)} Kg`
+            break;
+            case 3:
+            PESO_FINAL= pesoTierra*3.71/gTierra
+            PLANETA.value=`${parseInt(PESO_FINAL)} Kg`;
+            break;
+            case 4:
+            PESO_FINAL= pesoTierra*24.79/gTierra
+            PLANETA.value=`${parseInt(PESO_FINAL)} Kg`;
+            break;
+            case 5:
+            PESO_FINAL= pesoTierra*10.44/gTierra
+            PLANETA.value=`${parseInt(PESO_FINAL)} Kg`;
+            break;
+            case 6:
+            PESO_FINAL= pesoTierra*8.87/gTierra
+            PLANETA.value=`${parseInt(PESO_FINAL)} Kg`;
+            break;
+            case 7:
+            PESO_FINAL= pesoTierra*11.15/gTierra
+            PLANETA.value=`${parseInt(PESO_FINAL)} Kg`;
+            break;
+            case 8:
+            PESO_FINAL= pesoTierra*0.62/gTierra
+            PLANETA.value=`${parseInt(PESO_FINAL)} Kg`;
+            break;
+            }
+
+        }
+    }
+}
+    </script>
+</body>
+</html>
